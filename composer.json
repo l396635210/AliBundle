@@ -16,8 +16,10 @@
     "php": ">=7.0",
     "symfony/framework-bundle": ">=3.0"
   },
-  "psr-4": {
-    "Liz\\AliBundle\\": ""
+  "autoload": {
+      "psr-4": {
+        "Liz\\AliBundle\\": ""
+      }
   },
   "extra" : {
     "branch-alias" : {
