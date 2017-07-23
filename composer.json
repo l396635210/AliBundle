@@ -1,6 +1,6 @@
 {
   "name" : "liz/ali-bundle",
-  "description" : "A ali bundle",
+  "description" : "A symfony ali bundle",
   "type" : "symfony-bundle",
   "authors" : [{
     "name" : "liz",
@@ -17,11 +17,8 @@
     "symfony/framework-bundle": ">=3.0"
   },
   "psr-4": {
-    "Liz\\AliBundle\\": "src/Liz/AliBundle"
+    "Liz\\AliBundle\\": ""
   },
-  "target-dir" : "Company/DemoBundle",
-  "repositories" : [{
-  }],
   "extra" : {
     "branch-alias" : {
       "dev-master" : "some_version-dev"
