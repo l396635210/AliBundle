@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('sms')
                     ->addDefaultsIfNotSet()
                     ->children()
+                        ->scalarNode('account_id')->defaultValue('account_id')->cannotBeEmpty()->end()
                         ->scalarNode('access_key')->defaultValue('access_key')->cannotBeEmpty()->end()
                         ->scalarNode('access_key_secret')->defaultValue('access_key_secret')->cannotBeEmpty()->end()
                     ->end()
@@ -34,7 +35,6 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('app_id')->defaultValue('app_id')->cannotBeEmpty()->end()
-
                         ->scalarNode('access_key')->defaultValue('access_key')->cannotBeEmpty()->end()
                         ->scalarNode('access_key_secret')->defaultValue('access_key_secret')->cannotBeEmpty()->end()
                     ->end()

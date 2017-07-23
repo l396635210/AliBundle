@@ -28,11 +28,11 @@ class LizAliExtension extends Extension
         $def = $container->getDefinition('liz.service.ali_sms');
         $def->replaceArgument(0, $config['sms']['access_key'])
             ->replaceArgument(1, $config['sms']['access_key_secret'])
+            ->replaceArgument(3, $config['sms']['account_id'])
         ;
         $def = $container->getDefinition('liz.service.ali_pay');
-        $def->replaceArgument(1, $config['pay']['access_key'])
-            ->replaceArgument(2, $config['pay']['access_key_secret'])
-            ->replaceArgument(5, $config['pay']['app_id'])
+        $def->replaceArgument(1, $config['sms']['access_key'])
+            ->replaceArgument(2, $config['sms']['access_key_secret'])
         ;
     }
 }

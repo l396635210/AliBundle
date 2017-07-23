@@ -20,7 +20,7 @@ Config::load();
  * @property array tokenMap
  * @property int bufferTime 过期时间小于2分钟则重新获取，防止服务器时间误差
  * @property string mnsAccountEndpoint
- * @property \Aliyun\Core\DefaultAcsClient acsClient
+ * @property DefaultAcsClient acsClient
  */
 class TokenGetterForAlicom
 {
@@ -89,7 +89,6 @@ class TokenGetterForAlicom
     {
         $request = new QueryTokenForMnsQueueRequest();
         $request->setMessageType($messageType);
-
         try {
             $response = $this->acsClient->getAcsResponse($request);
             // print_r($response);
@@ -97,7 +96,7 @@ class TokenGetterForAlicom
             $tokenForAlicom->setMessageType($messageType);
             $tokenForAlicom->setToken($response->MessageTokenDTO->SecurityToken);
             $tokenForAlicom->setTempAccessKey($response->MessageTokenDTO->AccessKeyId);
-            $tokenForAlicom->setTempSecret($response->MessageTokenDTO->AccessKeySecret);           
+            $tokenForAlicom->setTempSecret($response->MessageTokenDTO->AccessKeySecret);
             $tokenForAlicom->setExpireTime($response->MessageTokenDTO->ExpireTime);
             // print_r($tokenForAlicom);
             return $tokenForAlicom;

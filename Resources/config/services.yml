@@ -8,7 +8,8 @@ services:
 
     liz.service.ali_sms:
         class: Liz\AliBundle\Services\SmsService
-        arguments: ["ali_sms_access_key", "ali_sms_access_key_secret", '@liz.utils.tool']
+        arguments: ["ali_sms_access_key", "ali_sms_access_key_secret", '@liz.utils.tool', 'account_id']
+
     liz.service.ali_pay:
         class: Liz\AliBundle\Services\PayService
         arguments: [%kernel.environment%, "ali_pay_access_key", "ali_sms_access_key_secret",

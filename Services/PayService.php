@@ -129,8 +129,7 @@ class PayService
             "    }" .
             "  }");
 
-        $result = $this->AopClientInit($postCharset, $format)
-            ->execute( $request);
+        $result = $this->AopClientInit()->execute( $request);
 
         $responseNode = str_replace(".", "_", $request->getApiMethodName()) . "_response";
         $resultCode = $result->$responseNode->code;
