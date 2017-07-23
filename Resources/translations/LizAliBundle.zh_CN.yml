@@ -1,0 +1,4 @@
+SignatureDoesNotMatch: 签名不匹配
+Specified signature is not matched with our calculation.: 签名与阿里服务器计算不符，检查access_key和access_key_secret是否正确.
+MissingSendDate: 接口参数发送日期sendDate
+SendDate is mandatory for this action.: sendDate是此操作的必须参数。

@@ -1,0 +1,15 @@
+services:
+#    liz_ali.example:
+#        class: Liz\AliBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    liz.utils.tool:
+        class: Liz\AliBundle\Utils\Tool
+        arguments: ['@translator']
+
+    liz.service.ali_sms:
+        class: Liz\AliBundle\Services\SmsService
+        arguments: ["ali_sms_access_key", "ali_sms_access_key_secret", '@liz.utils.tool']
+    liz.service.ali_pay:
+        class: Liz\AliBundle\Services\PayService
+        arguments: [%kernel.environment%, "ali_pay_access_key", "ali_sms_access_key_secret",
+          "@liz.utils.tool", %kernel.cache_dir%, "app_id"]
