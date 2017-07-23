@@ -1,0 +1,30 @@
+{
+  "name" : "liz/ali-bundle",
+  "description" : "A ali bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "liz",
+    "email" : "demo@company.com"
+  }],
+  "keywords" : [
+    "demo bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+    "php": ">=7.0",
+    "symfony/framework-bundle": ">=3.0"
+  },
+  "psr-4": {
+    "Liz\\AliBundle\\": "src/Liz/AliBundle"
+  },
+  "target-dir" : "Company/DemoBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "some_version-dev"
+    }
+  }
+}
